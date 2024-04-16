@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covil Game Bar</title>
+    <link rel="stylesheet" type="text/css" href="pagina33.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <img class="cabecalho-imagem" src="covil.png" alt="Logo do Restaurante Covil Game Bar">
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="covilteste - Copia layalt.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="pagina2covil.html">Cardápios</a>
+                    </li>
+                    <li>
+                        <a href="pagina3.html">Reserva</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="cabecalho-texto">Localização:Rua do Saboó,12, Guarulhos 07111030</p>
+    </header> 
+
+    <div class="container">
+        <div>
+    <section id="reservas" class="reservass">
+        <h2>Reservas</h2>
+        <p>Faça uma reserva para garantir seu lugar em nosso restaurante.</p><br>  
+        <form action="covil.jsp" name="form1" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <span id="erroNome"></span><br><br>
+
+            <label for="numero">Telefone:</label>
+            <input type="number" id="numero" name="numero">
+            <span id="erroNumero"></span><br><br>
+            
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
+            <sanp id="erroData"></sanp><br><br>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora"><br>
+            <sanp id="erroHora"></sanp><br>
+
+            <label for="pessoas">Número de pessoas:</label>
+            <input type="number" id="pessoas" name="pessoas" min="1" max="10">
+            <sanp id="erroPessoas"></sanp><br><br>
+
+            <input type="button" value="salvar" onclick="verificar()">
+        </form>
+    </section>
+        </div>
+    
+        <script>
+             
+            function limpar(){
+                document.getElementById("nome").style.backgroundColor = "white";
+
+                document.getElementById("numero").style.backgroundColor = "white";
+
+                document.getElementById("data").style.backgroundColor = "white";
+
+                document.getElementById("hora").style.backgroundColor = "white";
+
+                document.getElementById("pessoas").style.backgroundColor = "white";
+
+                document.querySelector("#erroNome").textContent = "";
+                document.querySelector("#erroNumero").textContent = "";
+                document.querySelector("#erroData").textContent = "";
+                document.querySelector("#erroHora").textContent = "";
+                document.querySelector("#erroPessoas").textContent = "";
+            }
+
+            function verificar(){
+                limpar();
+
+                var enviar = true;
+
+                var nome = document
+                .getElementById("nome")
+                .value;
+    
+                if ( nome.length == 0 ) {
+                    enviar = false
+                    document
+                    .getElementById("nome")
+                    .style
+                    .backgroundColor = "yellow";
+
+                    document
+                    .querySelector("#erroNome")
+                    .textContent = "Preencha o campo Nome"
+                }
+
+
+                var numero = document
+               .getElementById("numero")
+               .value;
+
+                if ( numero.length == 0 ) {
+                    enviar = false;
+                    document
+                    .getElementById("numero")
+                    .style
+                     .backgroundColor = "yellow";
+
+                    document
+                    .querySelector("#erroNumero")
+                    .textContent = "Preencha o campo Telefone"
+                }
+
+
+                var data = document
+                .getElementById("data")
+                .value;
+
+                if (data.length == 0) {
+                    enviar = false
+                    document
+                    .getElementById("data")
+                    .style
+                    .backgroundColor = "yellow"
+
+                    document
+                    .querySelector("#erroData")
+                    .textContent = "Preencha o campo Data"
+                }
+                
+
+                var hora = document
+                .getElementById("hora")
+                .value;
+
+                if (hora.length == 0){
+                    enviar = false
+                   document
+                  .getElementById("hora")
+                  .style
+                  .backgroundColor = "yellow";
+
+                     document
+                    .querySelector("#erroHora")
+                    .textContent = "Preencha o campo Hora"
+             }
+
+             var pessoas = document
+                .getElementById("pessoas")
+                .value;
+
+                if (pessoas.length == 0){
+                    enviar = false
+                   document
+                   .getElementById("pessoas")
+                   .style
+                   .backgroundColor = "yellow"
+
+                    document
+                    .querySelector("#erroPessoas")
+                    .textContent = "Coloque a quantidade de pesseoas"
+              }
+
+              if(enviar){
+              document.form1.submit();
+              
+             }
+             
+             }
+        </script>
+
+        <div class="container">
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para dúvidas ou informações adicionais.</p>
+        <p>Telefone: (11) 95021-1461</p>
+    </section>
+    
+    </div>
+
+    <div clas"></div>
+</body>
+</html>
